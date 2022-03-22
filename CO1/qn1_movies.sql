@@ -58,6 +58,14 @@ SELECT * FROM `Movies` WHERE director='Hanson' and myear>1997;
 SELECT title,rating FROM `Movies`;
 SELECT actor from Actors;
 SELECT director FROM `Movies`;
+
+
+select distinct Movies.director,Acts.actor from Movies inner join Acts on Movies.title=Acts.title;
+
+select distinct Movies.title from Movies inner join Acts on Movies.title=Acts.title where Movies.director='Coen' and Acts.actor='McDormand';
+ 
+-- **********************************
+
 drop view ad;
 create view ad  as
 select distinct actor,director
@@ -70,7 +78,5 @@ select distinct title,actor,director
 from Movies,Acts where director='Coen' and actor='McDormand';
 select distinct title from cm ;
 
-select distinct Movies.director,Acts.actor from Movies inner join Acts on Movies.title=Acts.title;
 select * from Acts;
 select * from Movies inner join Acts on Movies.title=Acts=title;
-select distinct Movies.title from Movies inner join Acts on Movies.title=Acts.title where Movies.director='Coen' and Acts.actor='McDormand';
